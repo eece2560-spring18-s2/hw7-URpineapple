@@ -196,6 +196,15 @@ void Database::LoadData(const std::string &data_folder_path,
 
 void Database::BuildMemberGraph() {
   // Fill in your code here
+  for(member_id=0; member_id++; member_id<member_id_hash_index.end){
+    for(int connect_id=member_id+1; connect_id++; connect_id<member_id_hash_index.end+1){
+      if (members[member_id].group_id == members[connect_id].group_id){
+        members[member_id].connecting_members=members[connect_id];
+      }
+    }
+  }
+  
+  
 }
 
 double Database::BestGroupsToJoin(Member *root) {
